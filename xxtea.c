@@ -29,11 +29,11 @@ typedef unsigned __int32 uint32_t;
 #define DELTA 0x9e3779b9
 
 #define FIXED_KEY \
-    size_t i, j;\
+    size_t i;\
     uint8_t fixed_key[16];\
     memcpy(fixed_key, key, 16);\
     for (i = 0; (i < 16) && (fixed_key[i] != 0); ++i);\
-    for (j = i + 1; j < 16; ++j) fixed_key[j] = 0;\
+    for (++i; i < 16; ++i) fixed_key[i] = 0;\
 
 
 /**
