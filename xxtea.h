@@ -1,14 +1,15 @@
 /**********************************************************\
 |                                                          |
-| xxtea.h                                                 |
+| xxtea.h                                                  |
 |                                                          |
-| XXTEA encryption algorithm library for Golang.           |
+| XXTEA encryption algorithm library for C.                |
 |                                                          |
 | Encryption Algorithm Authors:                            |
 |      David J. Wheeler                                    |
 |      Roger M. Needham                                    |
 |                                                          |
-| Code Author: Ma Bingyao <mabingyao@gmail.com>            |
+| Code Authors: Chen fei <cf850118@163.com>                |
+|               Ma Bingyao <mabingyao@gmail.com>           |
 | LastModified: Mar 3, 2015                                |
 |                                                          |
 \**********************************************************/

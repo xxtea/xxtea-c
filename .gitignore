@@ -1,5 +1,6 @@
 
 CMakeFiles/*
+example/CMakeFiles/*
 
 *.cmake
 
@@ -12,3 +13,5 @@ CMakeCache.txt
 *.a
 
 Makefile
+
+example/main
