@@ -1,0 +1,14 @@
+
+CMakeFiles/*
+
+*.cmake
+
+CMakeCache.txt
+
+*.out
+
+*.txt
+
+*.a
+
+Makefile
