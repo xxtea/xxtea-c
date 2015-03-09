@@ -10,7 +10,7 @@
 |                                                          |
 | Code Authors: Chen fei <cf850118@163.com>                |
 |               Ma Bingyao <mabingyao@gmail.com>           |
-| LastModified: Mar 9, 2015                                |
+| LastModified: Mar 10, 2015                               |
 |                                                          |
 \**********************************************************/
 
@@ -151,7 +151,7 @@ static uint8_t * xxtea_to_ubyte_array(const uint32_t * data, size_t len, int inc
 
 static uint32_t * xxtea_uint_encrypt(uint32_t * data, size_t len, uint32_t * key) {
     uint32_t n = (uint32_t)len - 1;
-    uint32_t z = data[n], y = data[0], p, q = 6 + 52 / (n + 1), sum = 0, e;
+    uint32_t z = data[n], y, p, q = 6 + 52 / (n + 1), sum = 0, e;
 
     if (n < 1) return data;
 
@@ -173,7 +173,7 @@ static uint32_t * xxtea_uint_encrypt(uint32_t * data, size_t len, uint32_t * key
 
 static uint32_t * xxtea_uint_decrypt(uint32_t * data, size_t len, uint32_t * key) {
     uint32_t n = (uint32_t)len - 1;
-    uint32_t z = data[n], y = data[0], p, q = 6 + 52 / (n + 1), sum = q * DELTA, e;
+    uint32_t z, y = data[0], p, q = 6 + 52 / (n + 1), sum = q * DELTA, e;
 
     if (n < 1) return data;
 
