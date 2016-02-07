@@ -10,7 +10,7 @@
 |                                                          |
 | Code Authors: Chen fei <cf850118@163.com>                |
 |               Ma Bingyao <mabingyao@gmail.com>           |
-| LastModified: Mar 10, 2015                               |
+| LastModified: Feb 7, 2016                                |
 |                                                          |
 \**********************************************************/
 
@@ -94,7 +94,10 @@ typedef unsigned __int32 uint32_t;
 
 static uint32_t * xxtea_to_uint_array(const uint8_t * data, size_t len, int inc_len, size_t * out_len) {
     uint32_t *out;
-    size_t i, n;
+#if !(defined(BYTE_ORDER) && (BYTE_ORDER == LITTLE_ENDIAN))
+    size_t i;
+#endif
+    size_t n;
 
     n = (((len & 3) == 0) ? (len >> 2) : ((len >> 2) + 1));
 
@@ -122,7 +125,10 @@ static uint32_t * xxtea_to_uint_array(const uint8_t * data, size_t len, int inc_
 
 static uint8_t * xxtea_to_ubyte_array(const uint32_t * data, size_t len, int inc_len, size_t * out_len) {
     uint8_t *out;
-    size_t i, m, n;
+#if !(defined(BYTE_ORDER) && (BYTE_ORDER == LITTLE_ENDIAN))
+    size_t i;
+#endif
+    size_t m, n;
 
     n = len << 2;
 
