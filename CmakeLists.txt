@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.6)
+SET(LIBXXTEA_SRC xxtea.c)
+ADD_LIBRARY(xxtea STATIC ${LIBXXTEA_SRC})
+INSTALL(TARGETS xxtea
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+INSTALL(FILES xxtea.h DESTINATION include)

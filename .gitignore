@@ -8,8 +8,6 @@ CMakeCache.txt
 
 *.out
 
-*.txt
-
 *.a
 
 Makefile
