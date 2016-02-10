@@ -13,3 +13,7 @@ CMakeCache.txt
 Makefile
 
 example/main
+
+install_manifest.txt
+
+*.dylib
