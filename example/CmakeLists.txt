@@ -5,7 +5,13 @@ add_executable(main ${DIR_SRCS})
 find_path(LIBXXTEA_HEADER xxtea.h)
 include_directories(${LIBXXTEA_HEADER})
 find_library(
-   LIBXXTEA_LIBRARIES NAMES  xxtea
-   PATHS /usr/lib/ /usr/local/lib/
+   LIBXXTEA_STATIC_LIBRARIES NAMES libxxtea.a
 )
-target_link_libraries(main ${LIBXXTEA_LIBRARIES})
+if(LIBXXTEA_STATIC_LIBRARIES)
+    target_link_libraries(main ${LIBXXTEA_STATIC_LIBRARIES})
+else(LIBXXTEA_STATIC_LIBRARIES)
+    find_library(
+       LIBXXTEA_LIBRARIES NAMES xxtea
+    )
+    target_link_libraries(main ${LIBXXTEA_LIBRARIES})
+endif(LIBXXTEA_STATIC_LIBRARIES)
