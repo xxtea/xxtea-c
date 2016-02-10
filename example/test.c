@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#pragma comment(lib, "xxtea.lib")
+#endif
+
 #include <stdio.h>
 #include <string.h>
 #include <xxtea.h>
