@@ -251,10 +251,10 @@ static uint8_t * xxtea_ubyte_decrypt(const uint8_t * data, size_t len, const uin
 
 void * xxtea_encrypt(const void * data, size_t len, const void * key, size_t * out_len) {
     FIXED_KEY
-    return xxtea_ubyte_encrypt(data, len, fixed_key, out_len);
+    return xxtea_ubyte_encrypt((const uint8_t *)data, len, fixed_key, out_len);
 }
 
 void * xxtea_decrypt(const void * data, size_t len, const void * key, size_t * out_len) {
     FIXED_KEY
-    return xxtea_ubyte_decrypt(data, len, fixed_key, out_len);
+    return xxtea_ubyte_decrypt((const uint8_t *)data, len, fixed_key, out_len);
 }
