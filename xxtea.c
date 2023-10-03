@@ -46,7 +46,9 @@ typedef unsigned __int32 uint32_t;
 #if defined(__i386__) || defined(__x86_64__) || defined(__amd64__) || \
    defined(vax) || defined(ns32000) || defined(sun386) || \
    defined(MIPSEL) || defined(_MIPSEL) || defined(BIT_ZERO_ON_RIGHT) || \
-   defined(__alpha__) || defined(__alpha)
+   defined(__alpha__) || defined(__alpha) || defined(_M_IX86) || \
+   defined(_M_X64) || defined(_M_AMD64) || defined(_M_ARM64) || \
+   (defined(_M_ARM) && defined(_MSC_VER))
 #define BYTE_ORDER    LITTLE_ENDIAN
 #endif
 
